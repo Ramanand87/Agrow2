@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="{% static 'js/speechrecognition.js' %}"></script>
+    <script src="{% static 'js/translate.js' %}"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .goog-te-banner-frame.skiptranslate {
+          display: none !important;
+      } 
+      body {
+          top: 0px !important; 
+      }
+      .VIpgJd-ZVi9od-ORHb-OEVmcd {
+        height:none !important;
+        width:none !important;
+        display: none !important; 
+        margin:0 !important;
+      }
+      #google_translate_element{
+        margin:0 0 0 85vw;
+      }
+    </style>
+    <script>window.onpageshow = function(event) {
+      if (event.persisted) {
+          window.location.reload();
+      }
+  };
+</script>
+  </head>
+  <body> 
+    <div class="navbar-cover"></div>
+    <div class="navigation">
+      <li class="logo">
+        <a href="/"><img src="{% static 'img/Agrow.jpg'%}" /></a>
+      </li>
+      <div class="nav-option">
+        <ul class="ul">
+          <li> <a href="{% url 'home' %}">Home</a></li>
+          <li class="none-1"><a href="{% url 'Aboutus' %}">About us</a></li>
+          <li class="none-1"><a href="{% url 'news' %}">News</a></li>
+          <li class="none-1"><a href="{% url 'services' %}">Services</a></li>
+          <li class="none-2"><a href="">Contact Us</a></li>
+          <div><a href="{% url 'profile'%}"><img class="profile" src="{{prof.profimag.url}}"></a></div>
+        </ul>
+      </div>
+      <div id="menu-button" class="hidden">
+        <img src="{% static 'img/menu.png'%}" alt="">
+      </div>
+    </div>
+    <div id="google_translate_element"></div>
+</body>
+</html>

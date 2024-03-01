@@ -1,0 +1,98 @@
+.external-footer {
+    background-color: rgb(3, 3, 19);
+    width: 97vw;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 17px;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 1 */
+}
+
+.footer-logo {
+    margin: 10px 0 13px 23px;
+    padding: 15px;
+    display: flex;
+    margin: 20px;
+}
+
+.footer-img {
+    height: 57px;
+    width: 57px;
+}
+
+.footer-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.footer-agrow {
+    margin: 7px 0px 0 12px;
+}
+
+.footer-agrow a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.right {
+    display: flex;
+    color: white;
+}
+
+.right ul {
+    margin: 60px;
+}
+
+.right ul li {
+    color: white;
+    list-style: none;
+    margin: 10px;
+}
+
+.right ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.lower-footer {
+    color: white;
+    margin: 0 0 20px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media {
+    display: flex;
+    /* background-color: white; */
+    margin: 27px 20px 0px 0px;
+}
+
+.social-media img {
+    height: 35px;
+    width: 34px;
+    margin-right: 17px;
+    padding: 7px;
+    background-color: black;
+}
+
+.social-media img a {
+    margin-right: 17px;
+    padding: 12px;
+}
+
+@media screen and (max-width:900px) {
+    .external-footer {
+        width: 850px;
+    }
+    .company {
+        display: none;
+    }
+}

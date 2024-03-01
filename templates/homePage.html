@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/homePage.css' %}" />
+  </head>
+
+  <body>
+    {% include "header.html" %}
+    <div class="card-section-1">
+      
+      <div class="card">
+        <h2 class="card-h2">Government schemes</h2>
+        <div>
+          <div class="about-image">
+            <img src="{% static 'img/sch.jpg'%}" alt="schemes" />
+          </div>
+          
+          <div class="about-section">
+            Explore government schemes, your key to support. Empowering lives,
+            providing opportunities. Discover, apply, and thrive. Your pathway to
+            benefits.
+          </div>
+          <div class="button-container">
+            <a href="{% url 'schemes' %}"><button class="card-button">Explore</button></a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="card">
+        <h2 class="card-h2">Bank Loan Schemes</h2>
+        <div>
+          <div class="about-image">
+            <img src="{% static 'img/Loan.jpg'%}" alt="schemes" />
+          </div>
+          <div class="about-section">
+            Bank Loan Schemes which are flexible, affordable, and come with lowest interest rates.
+          </div>
+          <div class="button-container">
+            <a href="{% url 'loan' %}"><button class="card-button" id="set">Explore</button></a>
+          </div>
+        </div>   
+      </div>
+      <div class="card">
+        <h2 class="card-h2">Crop Management</h2>
+        <div>
+          <div class="about-image">
+            <img src="{% static 'img/Crop.jpg'%}" alt="schemes" />
+          </div>
+          <div class="about-section">
+            Here is the complete solution for managing and tracking your crops at single place.
+          </div>
+          <div class="button-container">
+            <a href="{% url 'cropmanage' %}"><button class="card-button" id="set">Explore</button></a>
+          </div>
+        </div>
+      </div>
+    <div class="card">
+      <h2 class="card-h2">Buy &amp; Sell</h2>
+      <div>
+        <div class="about-image">
+          <img src="{% static 'img/Mar.jpg'%}" alt="schemes" />
+        </div>
+        <div class="about-section">
+          Are you looking to buy or sell agricultural products, equipment, or services? You've come to the right place! 
+        </div>
+        <div class="button-container">
+          <a href="{% url 'market' %}"><button class="card-button">Explore</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2 class="card-h2">Weather</h2>
+      <div>
+        <div class="about-image">
+          <img src="{% static 'img/Season.jpg'%}" alt="schemes" />
+        </div>
+        <div class="about-section">
+          Time-to-Time weather updates and season updates regarding your crops.
+        </div>
+        <div class="button-container">
+          <a href="{% url 'weather' %}"><button class="card-button" id="set">Explore</button></a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="card">
+      <h2 class="card-h2">Help &amp; Support</h2>
+      <div>
+        <div class="about-image">
+          <img src="{% static 'img/Essentials.jpg'%}" alt="schemes" />
+        </div>
+        <div class="about-section">
+          We understand the challenges and needs of farmers, and we are committed to providing you with the support
+          and Help.
+        </div>
+        <div class="button-container">
+          <a href="{% url 'estimate' %}"><button class="card-button" id="set-2">Explore</button></a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  {% include "footer.html" %}
+<script defer src="{% static 'js/menu.js' %}"></script>
+<script defer src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

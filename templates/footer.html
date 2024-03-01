@@ -1,0 +1,101 @@
+{% load static %}
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body> 
+    <footer>
+        <div class="external-footer">
+            <div class="foot">
+                <div class="footer-logo">
+                    <div class="footer-img"><img src="{% static 'img/Agrow.jpg' %}" alt=""></div>
+                    <div class="footer-agrow"><a href="">Agrow</a></div>
+                </div>
+    
+                <div class="right">
+                    <ul class="features">&nbsp;&nbsp;Features
+                        <li>
+                            <a href="{% url 'news' %}">News</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'cropmanage' %}">Management</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'weather' %}">Weather</a>
+                        </li>
+                    </ul>
+                    <ul class="products">&nbsp;&nbsp;Products
+                        <li>
+                            <a href="{% url 'cropmanage' %}">Crop Management</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'loan' %}">Loan Schemes</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'schemes' %}">Govt. Schemes</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'market' %}">Buy&amp;Sell</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'crop' %}">ChatBot</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile' %}">Profile</a>
+                        </li>
+                    </ul>
+                    <ul class="resources">&nbsp;&nbsp;Resources
+                        <li>
+                            <a href="/">Weather</a>
+                        </li>
+                        <li>
+                            <a href="/">News</a>
+                        </li>
+                        <li>
+                            <a href="/">Market</a>
+                        </li>
+                    </ul>
+                    <ul class="company">&nbsp;&nbsp;Why Agrow?
+                        <li>
+                            <a href="/">Community</a>
+                        </li>
+                        <li>
+                            <a href="/">Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="lower-footer">
+                <div class="footer-description">
+                    <h3>Globally Scalable</h3>
+                    <p>Copyyright &copy; 2024 Agrow | All rights reserved</p>
+                    <p>Privacy Policy | Cookie Policy | Cookie References | Terms &amp; Conditions | Acceptable use</p>
+                </div>
+                <div class="social-media">
+                    <a href=""><img src="{% static 'img/y2.png'%}" alt=""></a>
+                    <a href=""><img src="{% static 'img/x.png'%}" alt=""></a>
+                    <a href=""><img src="{% static 'img/ig.png'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    
+    
+    </footer>
+</body>
+</html>
