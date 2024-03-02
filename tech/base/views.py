@@ -21,7 +21,10 @@ from django.contrib.auth import authenticate, login
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 
-
+from pathlib import Path 
+import os
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def login(request):
     if request.method=="POST":
@@ -172,8 +175,8 @@ def run_streamlit_app():
 
 @login_required(login_url='login')
 def crop2(request):
-    # Check if Streamlit app is already running
-    streamlit_command = ["streamlit", "run", "base/.streamlit/chatbot1.py"]
+    path=str(BASE_DIR)+"/.streamlit/chatbot1.py"
+    streamlit_command = ["streamlit", "run", path]
 
     # Run the Streamlit app as a separate process
     process = subprocess.Popen(streamlit_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -188,7 +191,7 @@ def crop2(request):
     context = {'output': output, 'errors': errors}
     
     # Render your template or return an HTTP response
-    return render(request, 'crop42.html', context)
+    return render(request, 'crop2.html', context)
 
 @login_required(login_url='login')
 def news(request):
@@ -353,7 +356,8 @@ def services(request):
 
 @login_required(login_url='login')
 def chatbot(request):
-    streamlit_command = ["streamlit", "run", "base/.streamlit/chatbot2.py"]
+    path=str(BASE_DIR)+"/.streamlit/chatbot2.py"
+    streamlit_command = ["streamlit", "run", path]
     process = subprocess.Popen(streamlit_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     process.wait()
 
