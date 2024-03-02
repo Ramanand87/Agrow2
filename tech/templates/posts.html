@@ -33,7 +33,9 @@
             <div>{{i.address}}</div>
             <a href="delete?post_id={{i.post_id}}">Delete</a>
           </div>
-          <div><img src="{% static 'img/health.jpg' %}" alt="" /></div>
+          <div class="crop-image">
+            <span>{{i.icon}}</span>
+          </div>
         </div>
       </div>
       {% endfor %}
