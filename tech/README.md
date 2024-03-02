@@ -7,4 +7,6 @@ And Agrow is language independent and uses speech recognition also.
 
 
 # Authors
-Janmesh Rajput - 
+Janmesh Rajput - https://github.com/janmesh1814
+Dushyant Singh - https://github.com/dushyantbhati2
+Lakshay Kumawat - 
