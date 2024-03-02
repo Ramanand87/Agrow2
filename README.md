@@ -7,6 +7,8 @@ We provide various features like collection of government agriculture schemes an
 
 And Agrow is language independent and uses speech recognition also.
 
+## PPT
+- https://docs.google.com/presentation/d/1N58pHbU_fsMQwGQCHrUdsrGaMspJjkCb/edit
 
 # Authors
 - [Janmesh Rajput] - https://github.com/janmesh1814
