@@ -143,6 +143,15 @@ body {
     display: none;
     top: 20%;
 }
+@keyframes scaleIn {
+    from {
+      transform: scale(0);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  }
 .crop-image span{
     width: 100px;
     height: 100px;
@@ -150,3 +159,5 @@ body {
     /* transform: scale(10); */
     animation: scaleIn 0.5s ease-out 0.5s forwards;
   }
+
+
