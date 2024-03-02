@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/loan.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include "header.html" %}
+    {% comment %} write code here janmesh {% endcomment %}
+    <div class = "description" style="align-items:center">
+      <b>Bank Loan Schemes</b>  we understand the importance of agricliture in our economy and the pivotal role farmers 
+       play in feeding the nation. To support our farmers and ensure their financial well-being, there are loan
+       schemes specifically designed for your needs. These loan schemes are flexible, affordable, and come with 
+       lowest interest rates.
+    </div>
+    <style>
+      .description {
+        margin:0px 180px 40px 14vw;
+        {% comment %} font-family: 'Poppins', sans-serif; {% endcomment %}
+        font-weight:bold;
+        width:70vw;
+      }
+      .description b{
+        font-weight:bolder;
+      }
+      .loan_detail{
+        width:70vw;
+        padding:20px;
+        height:33vh;
+        display:flex;
+        flex-direction:row;
+        border:1px solid grey;
+        border-radius:8px;
+        margin:0 0 30px 14vw;
+        background-color:#ECEFE6;
+      justify-content:space-between;
+      }
+      .det{
+        padding:10px;
+      }
+      #loan_img{
+        margin-top:1.5vh;
+        width:20vw;
+        margin-right:1vw;
+        height:27vh;
+        border-radius:7px;
+
+      }
+
+      #loan_img:hover{
+        box-shadow:1px 1px 2px 2px #ECEFE6;
+      }
+      .det div{
+        display:flex;
+        flex-direction:row;
+      }
+      @media screen and (max-width:1025px){
+        .description {
+          margin:0px 180px 40px 4vw;
+          font-weight:bold;
+          width:80vw;
+        }
+        .description b{
+          font-weight:bolder;
+        }
+        .loan_detail{
+          width:80vw;
+          padding:13px;
+          height:auto;
+          display:flex;
+          flex-direction:column;
+          border:1px solid grey;
+          border-radius:8px;
+          margin:0 0 30px 4vw;
+          background-color:#ECEFE6;
+          justify-content:space-between;
+        }
+        #loan_img{
+          margin-top:1.5vh;
+          width:60vw;
+          height:27vh;
+          border-radius:7px;
+  
+        }
+  
+        #loan_img:hover{
+          box-shadow:1px 1px 2px 2px #ECEFE6;
+        }
+        .det div{
+          display:flex;
+          flex-direction:column;
+        }
+      }
+      @media screen and (max-width:400px){
+        .description {
+          margin:0px 180px 40px 4vw;
+          font-weight:bold;
+          width:80vw;
+        }
+        .description b{
+          font-weight:bolder;
+        }
+        .loan_detail{
+          width:80vw;
+          padding:13px;
+          height:auto;
+          display:flex;
+          flex-direction:column;
+          border:1px solid grey;
+          border-radius:8px;
+          margin:0 0 30px 4vw;
+          background-color:#ECEFE6;
+          justify-content:space-between;
+        }
+        #loan_img{
+          margin-top:1.5vh;
+          width:70vw;
+          height:27vh;
+          border-radius:7px;
+  
+        }
+  
+        #loan_img:hover{
+          box-shadow:1px 1px 2px 2px #ECEFE6;
+        }
+        .det div{
+          display:flex;
+          flex-direction:column;
+        }
+      }
+      table{
+        margin-left:15vw;
+      }
+      .hel{
+      border-top-left-radius:10px;  
+      background-color:#74ba33;
+      width:33vw;
+      border:1px solid grey;
+      height:50px;
+      display:flex;
+      align-items:center;
+      padding-left:2vw;
+     }
+     .her{
+      border-top-right-radius:10px; 
+      background-color:#74ba33;
+      width:33vw;
+      border:1px solid grey;
+      height:50px;
+      display:flex;
+      align-items:center;
+      padding-left:2vw;
+     }
+     tr{
+      display:flex;
+      flex-direction:row;
+     }
+     td{
+      background-color:#ECEFE6;
+      width:33vw;
+      border:1px solid grey;
+      display:flex;
+      border-top:none;
+      align-items:center;
+      padding-left:2vw;
+     }
+     li{
+      margin:10px;
+     }
+    </style>
+    {% for i in data %}
+    <div class='loan_detail'>
+      <div class="det">
+        <div><h4>Name:- </h4>{{i.name}}</div><br>
+        <div><h4>Purpose:- </h4>{{i.purpose}}</div><br>
+        <div><h4>Eligibility:- </h4>{{i.eligibility}}</div>
+      </div>
+      <div >
+      <img id="loan_img" src={{i.img.url}}>
+      </div>
+    </div>
+    
+    {% endfor %}
+    <table>
+      <tr>
+        <th class="hel">Name of the bank</th>
+        <th class="her">Agriculture loan schemes offered</th>
+      </tr>
+      <tr>
+        <td>State Bank of India</td>
+        <td>
+          <ul>
+            <li>Crop Loan</li>
+            <li>Kisan Credit Card</li>
+            <li>Multipurpose Gold Loan</li>
+            <li>Tractor Loan</li>
+            <li>Combine Harvestor Loan</li>
+            <li>Drip Irrigation Loan</li>
+            <li>Dairy Loan</li>
+            <li>Poultry Loan</li>
+            <li>Fisheries Loan</li>
+            <li>Produce Marketing Loan</li>
+            <li>Setting up of Agri Clinic and Agri Business Centres</li>
+            <li>Land Purchase Scheme</li>
+            <li>SBI Krishak Uthan Yojana</li>
+            <li>Scheme for Debt Swapping of Borrowers</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>National Bank for Agriculture and Rural Development (NABARD)</td>
+        <td>
+          <ul>
+            <li>Capital Investment Subsidy Scheme for Commercial Production Units for organic/ biological Inputs</li>
+            <li>Agriclinic and Agribusiness Centres Scheme</li>
+            <li>National Livestock Mission</li> 
+          </ul>
+          </td>
+      </tr>
+      <tr>
+        <td>Karur Vysya Bank</td>
+        <td>
+          <ul>
+            <li>Green Card / Green Card Plus (Kisan Card)</li>
+            <li>Green Harvester</li>
+            <li>Green Trac</li>
+            <li>Warehouse Receipt Loan</li>
+            <li>Jewel Loan</li>
+            <li>Kisan Tatkal</li>
+            <li>Green Car</li>
+            <li>Loans for Horticulture Projects</li>
+            <li>Two-Wheeler Loan</li>
+            <li>Dairy Loan</li>
+            <li>Poultry Loan</li>
+            <li>Pisciculture Loan</li>
+            <li>Loans for SHG-JLG</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>IndusInd Bank</td>
+        <td>
+          <ul>
+            <li>Production Loan (CC)</li>
+            <li>Investment Loan (TL)</li>
+            <li>Hi-Tech Agriculture (OD)</li> 
+            <li>Hi-Tech Agriculture (TL)</li>
+          </ul>
+          </td>
+      </tr>
+    </table>
+    {% include "footer.html" %}
+  </body>
+</html>

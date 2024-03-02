@@ -1,0 +1,66 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/news.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include "header.html" %}
+    <div class="news_container">
+<h1><u>Latest Agriculture news</u></h1>
+      <div class="left_news">
+      {% for i in news %}
+      
+        <div class="news">
+            <div class="news_head">
+              <h3>{{i.news_heading}}</h3>
+                <div class="news-content">
+                    <div class="news_text">  
+                      <p>{{i.news_about}}</p> 
+                    </div>
+                    <div class="news_img">
+                      <img src={{i.news_img}} alt="news1">
+                    </div>
+                </div>
+            </div>
+  
+            <div style="display: flex;justify-content: space-between;align-items: baseline;" class="news_bottom">
+              <div>
+                <p class="news_date">{{i.news_date}}</p>
+              </div>
+              <button class="read-btn"><a class="read-more" href={{i.news_link}}>Read more</a></button>
+            </div>
+        </div>
+          {% endfor %}
+          
+       </div>
+       
+       
+      </div>
+      <div class="right_news"></div>
+    </div>  
+    {% include "footer.html" %}
+  </body>
+</html>
+
+
+
+
+
+
+
+  

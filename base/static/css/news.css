@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.news_container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 4rem;
+    gap: 6rem;
+    flex-direction: column;
+}
+
+.news_container h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* background-image: linear-gradient(45deg, rgb(248, 38, 38), rgba(228, 34, 34, 0.823), rgb(237, 17, 50)); */
+}
+.left_news {
+    margin: 0.5rem 2rem 1rem 2rem;
+    width: 550px;
+}
+
+.right_news {
+    width: 35%;
+
+}
+
+.news{
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    background-color: rgb(237, 239, 230);
+    border-radius: 5px;
+    height: auto;
+    width: 80vw;
+    margin: 0.5rem 1rem 3rem 2rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: -2px -2px 1.7px 1px rgba(170, 243, 86, 0.25);
+}
+
+.news_head{
+    display: flex;
+    flex-direction: column;
+    margin:0 0 2rem 0;
+}
+
+.news_head h3{
+    margin:0 0 1.3rem 0;
+    padding: 1rem 0 1rem 0;
+    overflow: hidden;
+}
+
+.news-content{
+    display: flex;
+    padding: 0.5 rem 0.7rem 0.5rem 0.7rem;
+    overflow: hidden;
+    height: auto;
+    justify-content: space-between;
+}
+
+.news_bottom{
+    /* background-color: rgb(230, 34, 34); */
+    margin:2rem 0 0.7rem 0;
+}
+
+.news_date{
+    padding-left: 0.7rem;
+    color:black;
+    /* background-color: rgb(227, 33, 43);
+    color: white; */
+    /* background-color: gray; */
+
+}
+button{
+    padding: 0.7rem 1rem;
+    background-color: gray;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    height: auto;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.read-btn{
+    height: auto;
+    background-color: rgb(227, 33, 43);
+}
+.read-more{
+    text-decoration: none;
+    color: black;
+    color: white;
+}
+.news_text{
+    height: 100px;
+    
+
+}
+
+.news_img img{
+    width: 110px;
+    height: 100px;
+    border-radius: 5px;
+    margin-left: 20px
+
+}
+p{
+    font-size: 0.8rem;
+    word-spacing: 0.1rem;
+}
+
+.news_date{
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin: 1rem 0 1rem 0;
+}
+
