@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{request.user.username}}</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    {% include "header.html" %}
+    <div class="profile_container">
+        <div class="left_profile">
+            <div class="left_profile_upper">
+                <div class="profile_img">
+                    <img src="{{prof.profimag.url}}" alt="profile">
+                </div>
+                <div class="left_details">
+                    <div class="profile_name" style="padding:17px; text-align:center; ">{{prof.name}}</div>
+                    <div class="profile_username" style="padding:17px; text-align:center; ">@{{prof.user.username}}</div>      
+                  </div>
+                  <div class="profile_logout" style="margin-bottom: 2rem;">
+                    <a class="button" href="{% url 'logout' %}">
+                        <p class="button__text">Logout</p>
+                    </a>
+                </div>
+            </div> 
+        </div>
+        <div class="right_profile">
+            <div class="profile_info" style="display:flex; justify-content:center; align-items:center;">Personal Details</div>
+           <div class="profile_info_bottom">
+         <div class="email_phn">
+            <div class="profile_email" >
+                <div class="profile_heading">Email</div>
+                <div class="right_details_child" id="email">{{request.user.email}}</div>
+            </div>
+
+            <div class="profile_number" >
+                <div class="profile_heading">Phone Number</div>
+                <div class="right_details_child" id="number">{{request.prof.phoneno}}</div>
+            </div>
+         </div>
+            <div class="dis_state">
+                <div class="profile_District" >
+                    <div class="profile_heading">District</div>
+                    <div class="right_details_child" id="District">{{prof.city}}</div>
+                </div>
+                <div class="profile_state" >
+                    <div class="profile_heading">State</div>
+                    <div class="right_details_child" id="state">{{prof.state}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="content__button" style="margin: 10.6rem 0 0 12rem;">
+            <a class="button" href="{% url 'edit'%}">
+                <p class="button__text">Edit Profile</p>
+            </a>
+        </div>
+
+      </div>
+        </div>
+
+    </div>
+    {% include "footer.html" %}
+</body>
+</html>
