@@ -6,4 +6,5 @@ We provide various features like collection of government agriculture schemes an
 And Agrow is language independent and uses speech recognition also.
 
 
-Authors
+# Authors
+Janmesh Rajput - 
