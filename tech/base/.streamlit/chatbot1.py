@@ -17,7 +17,7 @@ API_KEY=os.environ.get('API_KEY')
 os.environ["OPENAI_API_KEY"]=API_KEY
 
 
-# os.environ["OPENAI_API_KEY"]="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"
+# os.environ["OPENAI_API_KEY"]=""
 chat = ChatOpenAI(temperature=0)
 st.set_page_config(page_title="Check your crop health", page_icon=":herb:")
 st.header("Hey, I'm your Crop Health Checker")

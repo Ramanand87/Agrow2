@@ -12,9 +12,20 @@ class Profile(models.Model):
     phoneno=models.CharField(max_length=11,null=True,blank=True)
     otp=models.IntegerField(null=True,blank=True)
     uid=models.UUIDField(default=uuid.uuid4)
+    address=models.TextField(blank=True)
     def __str__(self):
         return self.name
-    
+
+class posts(models.Model):
+    post_user=models.ForeignKey(Profile,on_delete=models.CASCADE)
+    post_id=models.UUIDField(default=uuid.uuid4)
+    crop=models.CharField(max_length=20,null=True)
+    price=models.CharField(max_length=20,null=True)
+    address=models.TextField(blank=True)
+    icon=models.CharField(max_length=2,blank=True)
+    def __str__(self):
+        return self.post_user.user.username
+
 class Schemes(models.Model):
     id=models.IntegerField(primary_key=True)
     s_name=models.CharField(max_length=100)

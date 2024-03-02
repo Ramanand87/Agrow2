@@ -47,6 +47,10 @@
                 <div class="profile_heading">Phone Number</div>
                 <div class="right_details_child" id="number">{{request.prof.phoneno}}</div>
             </div>
+            <div class="profile_number" >
+                <div class="profile_heading">Address</div>
+                <div class="right_details_child" id="number">{{request.prof.address}}</div>
+            </div>
          </div>
             <div class="dis_state">
                 <div class="profile_District" >
@@ -59,8 +63,11 @@
                 </div>
             </div>
         </div>
-        <div class="content__button" style="margin: 10.6rem 0 0 12rem;">
-            <a class="button" href="{% url 'edit'%}">
+        <div class="content__button">
+            <a class="button" href="{% url 'posts'%}" id="edit">
+                <p class="button__text">Your Posts</p>
+            </a>
+            <a class="button" href="{% url 'edit'%}" id="edit">
                 <p class="button__text">Edit Profile</p>
             </a>
         </div>

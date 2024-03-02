@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/posts.css' %}" />
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <h3 style="text-align: center">-----Your Posts-----</h3>
+    <div class="sale_post">
+      {% for i in post %}
+      <div class="chatbot">
+        <div id="hc">
+          <div id="l">
+            <div>{{i.post_user.name}}</div>
+            <div>{{i.crop}}</div>
+            <div>{{i.price}}</div>
+            <div>{{i.post_user.phoneno}}</div>
+            <div>{{i.address}}</div>
+            <a href="delete?post_id={{i.post_id}}">Delete</a>
+          </div>
+          <div><img src="{% static 'img/health.jpg' %}" alt="" /></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,71 @@
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+.sale_post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.chatbot{
+    display: flex;
+    margin-bottom: 40px;
+}
+#l{
+    display: flex;
+    flex-direction: column;
+}
+#l div {
+    padding-top: 10px;
+    padding-left: 18px;
+    /* width: 80%; */
+}
+#l a{
+    margin: 30px;
+    margin-top:53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#A7F260;
+    text-decoration: none;
+    color: black;
+    width: 200px;
+    height: 40px;
+    /* border: 1px solid blue; */
+    border-radius: 5px;
+}
+/* #l div{
+    margin:30px;
+} */
+#hc{
+    /* border: 1px solid grey; */
+    color: #000000;
+    /* font-weight: bolder; */
+    border-radius: 5px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:#EFF0E4;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, .2);
+}
+
+#hc img{
+    margin: 30px;
+    margin-top: 10px;
+    background-color: aqua;
+    height: 200px;
+    width: 200px;
+    border-radius: 3px;
+
+}

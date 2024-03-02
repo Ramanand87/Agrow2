@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/sale.css' %}" />
+  </head>
+  <body>
+
+
+
+    {% include "header.html" %}
+    <h2 class="search_h2">Search your Crop for sale</h2>
+    <div class="input_post">
+         
+        <div class="sales_input">
+           
+
+            <input
+            type="text"
+            id="sale_crop_name"
+            name="sale_crop_name"
+            value=""
+    
+            
+            />
+            <a href=""> search </a>
+    
+    
+            
+          </div>
+          <div class="add_post">
+            <div id="b">
+              <button
+                onclick="togglediv()"
+                class="edit-profile-btn"
+                style="cursor: pointer"
+              >
+                Post
+              </button>
+            </div>
+          </div>
+    </div>
+  
+  
+  
+
+
+
+   
+
+    
+    <div class="sale_post">
+        {% for i in post %}
+    <div class="chatbot">
+      <div id="hc">
+        <div id="l">
+          <div><b>Name: </b>{{i.post_user.name}}</div>
+          <div><b>Crop: </b>{{i.crop}}</div>
+          <div><b>Price Per 100Kg: </b> {{i.price}}</div>
+          <div><b>Phone Number: </b>{{i.post_user.phoneno}}</div>
+          <div><b>Address: </b>{{i.address}}</div>
+          <a href="">Call: </a>
+        </div>
+        <div class="crop-image">
+          <span>{{i.icon}}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %} </div>
+    <form
+      id="post-form"
+      style="
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.7);
+        border-radius: 30px;
+        background-color: white;
+        display: none;
+      "
+      method="POST"
+      enctype="multipart/form-data"
+      action="{% url 'add_post' %}"
+    >
+      {% csrf_token %} {% comment %} <label for="username">Name:</label><br />
+      <input
+        type="text"
+        id="username"
+        name="name"
+        value="{{prof.name}}"
+      /><br />
+      {% endcomment %} <label for="crop_name">Crop name:</label><br />
+      <input
+        type="text"
+        id="crop_name"
+        name="crop_name"
+        value=""
+        required
+      /><br />
+      {% comment %} <label for="phoneno">Phoneno:</label><br />
+      <input
+        type="text"
+        id="phoneno"
+        name="phoneno"
+        value="{{prof.phoneno}}"
+      /><br />
+      {% endcomment %} <label for="address">Address:</label><br />
+      <input
+        type="text"
+        id="address"
+        name="address"
+        value="{{prof.address}}"
+      /><br />
+      <label for="price">Price per 100kg:</label><br />
+      <input type="text" id="price" name="price" value="" /><br />
+      <br />
+      <button
+        type="submit"
+        class="post"
+        style="
+          background-color: #19885c;
+          width: 34%;
+          background-color: #19885c;
+          border: none;
+          color: white;
+          font-size: 0.9rem;
+          border-radius: 30px;
+          height: 36px;
+          cursor: pointer;
+          margin-top: -0.2rem;
+          align-items: center;
+        "
+      >
+        Post
+      </button>
+    </form>
+    {% include "footer.html" %}
+    <script src="{% static 'js/test.js' %}"></script>
+    <script>
+      var divf = document.getElementById("post-form");
+      function togglediv() {
+        if (divf.style.display === "none") {
+          divf.style.display = "block";
+        } else {
+          divf.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

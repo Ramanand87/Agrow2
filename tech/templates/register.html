@@ -19,19 +19,21 @@
             {% endfor %}
             <form method="POST" id="register" action="">
                 {% csrf_token %}
-                <input type="text" name="name" placeholder="Enter your Name " id="inp">
+                <input type="text" name="name" placeholder="Enter your Name " id="inp" required>
                 <br><br>
-                <input type="text" name="username" placeholder="Username" id="inp">
+                <input type="text" name="username" placeholder="Username" id="inp" required>
                 <br><br>
-                <input type="email" name="email" placeholder="E-mail id" id="inp">
+                <input type="email" name="email" placeholder="E-mail id" id="inp" required>
                 <br><br>
-                <input type="text" name="state" placeholder="State" id="inp"> &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                <input type="text" name="phoneno" placeholder="Phoneno" id="inp" required>
+                <br><br>
+                <input type="text" name="state" placeholder="State" id="inp" required> &nbsp;&nbsp;&nbsp;&nbsp;<br>
                 <br>
-                <input type="text" name="district" placeholder="District" id="inp">
+                <input type="text" name="district" placeholder="District" id="inp" required>
                 <br><br>
-                <input type="password" name="password1" placeholder="Password" id="inp">
+                <input type="password" name="password1" placeholder="Password" id="inp" required>
                 <br><br>
-                <input type="password" name="password2" placeholder="Confirm Password" id="inp">
+                <input type="password" name="password2" placeholder="Confirm Password" id="inp" required>
                 <br><br>
                 <div class="signin-reg">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
                 <button type="submit" id="submit">Register</button>

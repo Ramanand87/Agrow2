@@ -70,7 +70,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 1rem; */
    padding:  0.2rem 2rem;
    overflow: hidden;
 
@@ -81,6 +81,7 @@
 .profile_info{
     font-weight: 600;
     font-size: 1.5rem;
+    padding-bottom: 2rem;
 }
 
 
@@ -119,16 +120,14 @@
 }
 
 .content__button {
-    /* margin: 3rem 0 2rem; */
-    padding: 13px;
-    text-align: center;
-    font-weight: 600;
-    order: 4;
-    display: flex;
-    margin-left:11rem;
+    margin: 8rem 0 2rem;
+   display: flex;
+   width: 300px;
+   align-items: center;
+   justify-content: space-around;
   }
 
-.content__button .button {
+.button {
     display: inline-block;
     padding: .7rem 1.2rem;
     text-align: center;
@@ -163,5 +162,7 @@
     color: #fff;
     cursor: pointer;
   }
-
+#edit{
+    margin-top: 20px;
+}
  

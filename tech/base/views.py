@@ -47,6 +47,7 @@ def register(request):
         name=request.POST['name']
         username=request.POST['username']
         email=request.POST['email']
+        phoneno=request.POST['phoneno']
         state=request.POST['state']
         district=request.POST['district']
         p1=request.POST['password1']
@@ -64,7 +65,7 @@ def register(request):
             new_user=models.User.objects.create(username=username,email=email)
             new_user.set_password(p1)  
             new_user.save()
-            new_prof=models.Profile.objects.create(user=new_user,name=name,state=state,city=district)
+            new_prof=models.Profile.objects.create(user=new_user,name=name,state=state,city=district,phoneno=phoneno)
             new_prof.save()
             auth.login(request,new_user)
             return redirect('home')
@@ -398,3 +399,53 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
+def sale(request):
+    post=models.posts.objects.all()
+    prof=models.Profile.objects.get(user=request.user)
+
+    return render(request,'sale.html',{'post':post,'prof':prof})
+
+def posts(request):
+    prof=models.Profile.objects.get(user=request.user)
+    post=models.posts.objects.filter(post_user=prof)
+    return render(request,'posts.html',{'post':post})
+
+def add_post(request):
+    prof=models.Profile.objects.get(user=request.user)
+    if request.method=='POST':
+        crop_name=request.POST['crop_name']
+        price=request.POST['price']
+        address=request.POST['address']
+        crop_icons = {
+        "Rice": "🌾",
+        "Wheat": "🌾",
+        "Maize": "🌽",
+        "Barley": "🌾",
+        "Sugarcane": "🎋",
+        "Cotton": "🌱",
+        "Tea": "🍵",
+        "Coffee": "☕",
+        "Pulses": "🌱",
+        "Oilseeds": "🌻",
+        "Fruits": "🍎",
+        "Vegetables": "🥕",
+        "Spices": "🌶️",
+        "Jute": "🌿",
+        "Rubber": "🌳",
+        "Tobacco": "🌿",
+        "Soybeans": "🌱",
+        "Sesame": "🌱",
+        "Groundnuts": "🌱",
+        "Coconut": "🥥",
+        }
+        icon = crop_icons.get(crop_name)
+        print(icon)
+        new_post=models.posts.objects.create(post_user=prof,crop=crop_name,price=price,address=address,icon=icon)
+        new_post.save()
+        return redirect('sale')
+    
+def delete(request):
+    idd=request.GET.get('post_id')
+    to_deleted=models.posts.objects.get(post_id=idd)
+    to_deleted.delete()
+    return redirect('posts')
