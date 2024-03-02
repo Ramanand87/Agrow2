@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    {% include "header.html" %}
+    <div class="profile_container">
+        <div class="left_profile">
+            <div class="left_profile_upper">
+                <div class="profile_img">
+                    <img src="{{prof.profimag.url}}" alt="profile">
+                </div>
+                <div class="left_details">
+                    <div class="profile_name" style="padding:17px; text-align:center; ">{{prof.name}}</div>
+                    <div class="profile_username" style="padding:17px; text-align:center; ">@{{request.user.username}}</div>       
+                    
+                  </div>
+            </div>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="profile_pict_edit" >
+                <label for="editprof_pict" style="margin-top:1.7rem;">Update your Profile Picture</label><br>
+                <input id="editprof_pict" class="profile_img_input" type="file" name="image" placeholder="Update your Profile "  style="width:200px; box-sizing:border-box; border-radius: 4px; border:none; border-bottom:2px solid black;padding:0.5rem 0; margin-top: 1rem;">
+            </div>
+              {% comment %} <div class="profile_logout">
+                <a class="button" href="#">
+                    <p class="button__text">Logout</p>
+                </a>
+              </div> {% endcomment %}
+              
+        </div>
+        
+        <div class="right_profile">
+            <div class="profile_info" style="display:flex; justify-content:center; align-items:center;">Personal Details</div>
+           <div class="profile_info_bottom">
+         <div class="email_phn">
+            {% comment %} <div class="profile_input" >
+                <label for="editprof_pict">Update your Profile Picture</label><br>
+                <input id="editprof_pict" class="profile_img_input" type="file" name="image" placeholder="Update your Profile "  style="width:200px; box-sizing:border-box; border-radius: 4px; border:none; border-bottom:2px solid black;padding:0.5rem 0">
+            </div> {% endcomment %}
+
+            <div class="profile_email" >
+                <label for="editprof_name">Update your Name</label><br>
+                <input type="text" placeholder="Update your name " name="name" style="width:200px; box-sizing:border-box; border-radius: 4px; border:none; border-bottom:2px solid black;" value="{{prof.name}}"> 
+                {% comment %} <form>
+                    <input type="text" placeholder="Update your name "><input>
+                    <input type="text" placeholder="Update your Username "><input>
+                    <input type="number" placeholder="Update your Phone Number "><input>
+                    <input type="email" placeholder="Update your email id "><input>
+                </form>  {% endcomment %}
+            </div>
+           
+            <div class="profile_number" >
+                <label for="editprof_pict">Update your Username</label><br>
+                <input type="text" placeholder="Update your Username"  name="username" style="width:200px; box-sizing:border-box; border-radius: 4px; border:none; border-bottom:2px solid black;" value="{{request.user.username}}">
+                {% comment %} <div class="profile_heading">Phone Number</div>
+                <div class="right_details_child" id="number">6376331444</div> {% endcomment %}
+            </div>
+         </div>
+            <div class="dis_state" style="margin-left:1.3rem">
+                <div class="profile_District" >
+                    <label for="editprof_pict">Update your Phone Number</label><br>
+                    <input type="number" placeholder="Update your Phone Number "  name="phoneno" style="width:200px; box-sizing:border-box; border-radius: 4px; border:none; border-bottom:2px solid black;" value="{{prof.phoneno}}">
+                    {% comment %} <div class="profile_heading">District</div>
+                    <div class="right_details_child" id="District">Sikar</div> {% endcomment %}
+                </div>
+                <div class="profile_state" >
+                    <label for="editprof_pict">Update your E-mail id</label><br>
+                    <input type="email" placeholder="Update your email id " name="email"  style="width:200px; box-sizing:border-box; border-radius: 4px; border:none; border-bottom:2px solid black;" value="{{request.user.email}}">
+                    {% comment %} <div class="profile_heading">State</div>
+                    <div class="right_details_child" id="state">Rajasthan</div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="content__button" style=" margin-left: 11rem;;"><button class="button" type="submit">
+            <p class="button__text">Save</p>
+        </button></div>
+      </div>
+    </form>
+        </div>
+
+    </div>
+    {% include "footer.html" %}
+</body>
+</html>
