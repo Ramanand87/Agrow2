@@ -1,0 +1,57 @@
+{% load static %}
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{details.s_name}}</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="schemesPage">
+        <h1><u>{{details.s_name}}</u></h1>
+        <div class="scheme-description">
+            <div class="disp">
+                <p>
+                    <h3>Description -: </h3> <p>{{details.desc}}</p>
+                <br>
+                <p>
+                    <h3>Deadline -: </h3> <p>{{details.duration}}</p>
+                <br>
+                <p>
+                    <h3>Documents Reuired -:</h3>
+                    <ul class="docs">
+                        <li>Aadhar Card</li>
+                        <li>Bank Details</li>
+                        <li>Address information</li>
+                    </ul>
+                </p>
+                <br>
+                <p>
+                    <h3>Link -:</h3> <a id="a-scheme" href={{details.link}}>Website link</a>
+                <p>
+            </div>
+            <img id="scheme-img" src={{details.img.url}} alt="">
+        </div>
+    </div>
+    <div class="media">
+        {% comment %} <div class="red-line"></div> {% endcomment %}
+       <div>
+        <h2>Here is the detailed information regarding the scheme -</h2>
+        <div class="video">
+            {% video details.video 'medium' %}
+        </div>
+       </div>
+        <div class="scheme-pdf">
+            <p><h3>Link for Hindi PDF -:</h3> <a class="a-pdf" href={{details.hindi_pdf}}><img src="{% static 'img/pdf.png'%}" alt=""></a></p>
+            <p><h3>Link for English PDF -:</h3> <a class="a-pdf" href={{details.pdf}}><img src="{% static 'img/pdf.png'%}" alt=""></p></a>
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>

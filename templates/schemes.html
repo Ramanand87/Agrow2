@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/schemes.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include "header.html" %}
+    <div class="description" style="align-items:center; margin: 60px 120px 40px 120px; font-">
+      The government of India is committed to supporting the agricultural sector and ensuring the welfare of farmers. 
+      To this end, several schemes have been implemented to provide financial assistance, training, and resources to farmers 
+      across the country.
+    </div>
+    <div class="schemes">
+      <h1>-----Government Schemes-----</h1>
+      <a href="{% url 'detail' 2 %}" class="scheme" style="text-decoration:none;color:black;background-color: #80bcbd">
+        <h4 style="margin:0 4px"> 1.</h4>
+        Agriculture Infrastructure Fund
+      </a>
+      <a href="{% url 'detail' 1 %}" class="scheme" style="text-decoration:none;color:black;background-color: #aad9bb">
+        <h4 style="margin:0 4px"> 2.</h4>
+        Animal Husbandry Infrastructure Development Fund
+      </a>
+      <a href="{% url 'detail' 3 %}" class="scheme" style="text-decoration:none;color:black;background-color: #d5f0c1">
+        <h4 style="margin:0 4px"> 3.</h4>
+        Credit facility for farmers 
+      </a>
+      <a href="{% url 'detail' 5 %}" class="scheme" style="text-decoration:none;color:black;background-color: #f9f7c9">
+        <h4 style="margin:0 4px"> 4.</h4>
+        Pradhan Mantri Fasal Bima Yojana (PMFBY)
+      </a>
+      <a href="{% url 'detail' 4 %}" class="scheme" style="text-decoration:none;color:black;background-color: #80bcbd">
+        <h4 style="margin:0 4px"> 5.</h4>
+        Pradhan Mantri Kisan Sampada Yojana<br />
+      </a>
+      <a href="{% url 'detail' 6 %}" class="scheme" style="text-decoration:none;color:black;background-color: #aad9bb">
+        <h4 style="margin:0 4px"> 6.</h4>
+        National Agriculture Market (e-NAM)
+      </a>
+      <a href="{% url 'detail' 7 %}" class="scheme" style="text-decoration:none;color:black;background-color: #d5f0c1">
+        <h4 style="margin:0 4px"> 7.</h4>
+        Paramparagat Krishi Vikas Yojana
+      </a>
+      <a href="{% url 'detail' 8 %}" class="scheme" style="text-decoration:none;color:black;background-color: #f9f7c9">
+        <h4 style="margin:0 4px"> 8.</h4>
+        Group Accident Insurance scheme for Fishermen
+      </a>
+      <a href="{% url 'detail' 9 %}" class="scheme" style="text-decoration:none;color:black;background-color: #80bcbd">
+        <h4 style="margin:0 4px"> 9.</h4>
+        Interest subvention for dairy sector
+      </a>
+      <a href="{% url 'detail' 10 %}" class="scheme" style="text-decoration:none;color:black;background-color: #aad9bb">
+        <h4 style="margin:0 4px"> 10.</h4>
+        Krishi UDAN scheme
+      </a>
+      <a href="{% url 'detail' 11 %}" class="scheme" style="text-decoration:none;color:black;background-color: #d5f0c1">
+        <h4 style="margin:0 4px"> 11.</h4>
+        National Mission on Natural Farming
+      </a>
+      <a href="{% url 'detail' 12 %}" class="scheme" style="text-decoration:none;color:black;background-color: #f9f7c9">
+        <h4 style="margin:0 4px"> 12.</h4>
+        Mission Amrit Sarovar
+      </a>
+      <a href="{% url 'detail' 13 %}" class="scheme" style="text-decoration:none;color:black;background-color: #80bcbd">
+        <h4 style="margin:0 4px"> 13.</h4>
+        National Beekeeping and Honey Mission
+      </a>
+    </div>
+
+    <script src="{% static 'js/schemes.js'%}"></script>
+    {% include "footer.html" %}
+  </body>
+</html>

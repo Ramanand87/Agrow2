@@ -1,0 +1,122 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/weather.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+     {% include "header.html" %} 
+     <div class = "description" >
+      Seasons play a crucial role in determining the growth and development of crops. Understanding the impact of seasons 
+          on crop growth is essential for farmers to make informed decisions about planting, irrigation, fertilization, and
+           pest management.
+    </div>
+  <div class="weather">
+    <div class="left_weather">
+      <div class="weather-container">
+        <div class="weather-details">
+          <div class="time">
+            <div class="daytime">Good Morning, Lucky</div>
+            {% if s >= 12  %}
+            <div class="timestamp">{{curr_time}} pm</div>
+            {% endif %}
+            {% if s < 12  %}
+            <div class="timestamp">{{curr_time}} am</div>
+            {% endif %}
+            <div class="day">{{curr_date}}</div>
+          </div>
+          <div class="forecast">
+            <div class="title">Weather Forecast</div>
+            <div class="details">{{desc}}</div>
+          </div>
+        </div>
+        <div class="weather_right">
+          <div class="location-selector">
+            
+            <span>{{state}} {{city}}</span>
+           
+          </div>
+
+          <div class="weather-image">
+            <span id="main">{{icon}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="time_container">
+
+        <h1>Hourly Forecast</h1>
+        <div class="card_container">
+          {% for i in weather %}
+          <div class="card sunny" style="background-color:{{i.color}}">
+            <div class="icon">{{ i.icon }}</div>
+            <div class="temperature">{{i.main.temp}}°C</div>
+            <div class="time">{{ i.dt_txt|slice:"11:16" }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+     
+    </div>
+    <div style="height: 92vh" class="right_container">
+      <div class="upper">
+        <div class="weather-image">
+          <span>{{icon}}<span>
+          {% comment %} <img src="./cloudy.png" alt="" /> {% endcomment %}
+        </div>
+
+        <div class="tempreture_now">{{temp}}°C</div>
+        <div class="weather_details">{{desc}}</div>
+        <div class="other_details">
+          <div class="wind">
+            <img src="/wind.png" alt="" />
+            <p>wind</p>
+          </div>
+
+          <div>|</div>
+
+          <div>{{simple.wind.speed}} Km/h</div>
+        </div>
+      </div>
+
+      <div class="lower">
+        <h2>Next 5 Day Weather Forecast</h2>
+        <div class="next_days">
+          {% for i in weather2 %}
+          <div class="days">
+            <div class="days_img_container">
+              {{i.icon}}
+              <div>
+                <p class="days_date">{{i.formatted_date}}</p>
+                {% for k in i.weather %}
+                <p class="weather_details_lower">{{k.main}}</p>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="days_temp">
+              {% comment %} <p>{{i.main.temp_min}}°C &nbsp;&nbsp;</p> {% endcomment %}
+              <span>|</span>
+              <p>{{i.main.temp_max}}°C</p>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+    {% include "footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+.container {
+    margin-top: 50px;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.service-wrapper {
+    padding: 5% 8%;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 5 rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: transparent;
+    letter-spacing: 4px;
+    background-color: rgb(4, 52, 83);
+    background: linear-gradient(8deg, rgb(141, 241, 154) 0%, rgb(36, 226, 43) 41%, rgb(180, 237, 185)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    height: 8px;
+    width: 80%;
+    border-radius: 10%;
+    background-color: rgba(176, 249, 167, 0.662);
+}
+
+h1 span {
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #72e2ae;
+    animation: anim 5s linear infinite;
+}
+
+@keyframes anim {
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: 88%;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.card {
+    height: 330px;
+    width: 370px;
+    padding: 3% 8%;
+    box-shadow: 2px 8px rgb(220, 242, 222);
+    border-radius: 8px;
+    transform: .6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: -200px;
+    width: 120%;
+    transform: rotate(50deg);
+    background-color: rgb(181, 244, 181);
+    height: 18px;
+    filter: blur(30px);
+    opacity: 0.5s;
+    transition: 1s;
+}
+
+.card:hover:after {
+    width: 225%;
+    top: -100%;
+}
+
+.card h2 {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card p {
+    text-align: left;
+    width: 100%;
+    margin: 12px 0;
+    color: black;
+}
+
+.card:hover {
+    background-color: transparent;
+    transform: translateY(-8px);
+    border-color: #00ff37;
+}
+
+@media screen and (max-width:1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:900px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/services.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include "header.html" %}
+    <div class="container">
+        <div class="service-wrapper">
+            <div class="service">
+                <h1>Services <span></span></h1>
+                <div class="cards">
+                    <div class="card">
+                        <h2>Precision</h2>
+                        <p>Utilizing ML model and image recognition to monitor crops, soil conditions, and weather patterns. This can involve providing farmers with insights on optimal planting times, irrigation scheduling, and disease detection.</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Weather Forecasting and Risk Management</h2>
+                        <p>Providing weather forecasting services tailored to the needs of farmers, including alerts for extreme weather events such as storms, frosts, or droughts. Additionally, offering risk management tools such as crop insurance and hedging strategies to mitigate weather-related losses.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Crop Monitoring and Management</h2>
+                        <p>Offering services for monitoring crop health, detecting pests and diseases, and providing recommendations for pest control and crop management practices.</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Market</h2>
+                        <p>Creating online platforms to know farmers the prices of different crops in different districts and places. This can enable farmers to get better prices for their produce.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Soil Health Analysis</h2>
+                        <p>Offering soil testing services to assess nutrient levels, pH, organic matter content, and soil structure using Image recognition and ML trainee. This information can help farmers make informed decisions about fertilization, soil amendments, and crop rotation strategies.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Agri-FinTech</h2>
+                        <p>Providing financial services tailored to the needs of farmers,various government loan schemes. This can help farmers access capital, manage risk, and improve their financial stability.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+Services page
+    {% include "footer.html" %}
+  </body>
+</html>
