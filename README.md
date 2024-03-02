@@ -10,6 +10,15 @@ And Agrow is language independent and uses speech recognition also.
 ## PPT
 - https://docs.google.com/presentation/d/1XaxzqxD6eIaWWE6laO69coVMuIPX8rzg/edit
 
+## Agrow
+- Installing open terminal and type
+     git clone https://github.com/janmesh1814/Agrow.git
+
+## To Run
+  - pip install content in requirement.txt
+    1-) Navigate to the "tech" directory using "cd tech" in the command line interface(CLI).
+    2-) Initiate the server by executing the command "python manage.py runserver" to start the server for the project.
+
 # Authors
 - [Janmesh Rajput] - https://github.com/janmesh1814
 - [Dushyant Singh] - https://github.com/dushyantbhati2
