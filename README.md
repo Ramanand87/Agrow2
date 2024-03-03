@@ -8,7 +8,7 @@ We provide various features like collection of government agriculture schemes an
 And Agrow is language independent and uses speech recognition also.
 
 ## PPT
-- https://docs.google.com/presentation/d/1XaxzqxD6eIaWWE6laO69coVMuIPX8rzg/edit
+- https://drive.google.com/drive/folders/1zQB7xDnni4RuUxFmXLh0cdR67YzxpJC6?usp=sharing
 
 ## Agrow
 - Installing open terminal and type
