@@ -12,10 +12,10 @@ Django, SQLite HTML, CSS, JavaScript, StreamLit.io, LangChain
 
 ## Video demo
 - https://youtu.be/b2VmAJiih_Q?si=hcT4HTslAzDsTXiL
-- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/247d0b60-2508-4460-af7f-1a78c09e2951)
-- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/e31a1bb2-53b9-497c-ace5-314685220435)
 - ![image](https://github.com/janmesh1814/Agrow/assets/124091825/dc694ff3-f16d-43d3-b43b-158e593282e6)
-
+- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/e31a1bb2-53b9-497c-ace5-314685220435)
+- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/5eef41ed-1e50-4170-8e66-0a35c8b84f5e)
+- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/247d0b60-2508-4460-af7f-1a78c09e2951)
 ## Agrow
 - Installing open terminal and type
      git clone https://github.com/janmesh1814/Agrow.git
