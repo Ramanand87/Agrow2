@@ -7,6 +7,9 @@ We provide various features like collection of government agriculture schemes an
 
 And Agrow is language independent and uses speech recognition also.
 
+## Technologies 
+Django, SQLite HTML, CSS, JavaScript, StreamLit.io, LangChain
+
 ## PPT
 - https://drive.google.com/drive/folders/1zQB7xDnni4RuUxFmXLh0cdR67YzxpJC6?usp=sharing
 
