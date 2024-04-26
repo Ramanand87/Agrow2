@@ -10,8 +10,11 @@ And Agrow is language independent and uses speech recognition also.
 ## Technologies 
 Django, SQLite HTML, CSS, JavaScript, StreamLit.io, LangChain
 
-## PPT
-- https://drive.google.com/drive/folders/1zQB7xDnni4RuUxFmXLh0cdR67YzxpJC6?usp=sharing
+## Video demo
+- https://youtu.be/b2VmAJiih_Q?si=hcT4HTslAzDsTXiL
+- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/247d0b60-2508-4460-af7f-1a78c09e2951)
+- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/e31a1bb2-53b9-497c-ace5-314685220435)
+- ![image](https://github.com/janmesh1814/Agrow/assets/124091825/dc694ff3-f16d-43d3-b43b-158e593282e6)
 
 ## Agrow
 - Installing open terminal and type
