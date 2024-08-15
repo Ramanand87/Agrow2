@@ -2,17 +2,12 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib import messages
 from . import models
 from django.contrib.auth.models import User,auth
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 import requests
 import threading
 from django.http import JsonResponse
 import os
 import subprocess
 from django.utils.safestring import mark_safe
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 from PIL import Image
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -78,7 +73,7 @@ def register(request):
 def home(request):
     prof=models.Profile.objects.get(user=request.user)
     return render(request,'homePage.html',{'prof':prof})
-
+ 
 @login_required(login_url='login')
 def profile(request):
     prof=models.Profile.objects.get(user=request.user)
@@ -200,13 +195,9 @@ def news(request):
     headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win 64 ; x64) Apple WeKit /537.36(KHTML , like Gecko) Chrome/80.0.3987.162 Safari/537.36'}
     webpage=requests.get(url,headers=headers).text
     soup=BeautifulSoup(webpage, 'lxml')
-
-# print(soup.prettify())
     len(soup.find_all('h3'))
 
     news_heading = []
-
-
 
     for h3_tag in soup.find_all('h3'):
         if 'm-heading3' not in h3_tag.get('class', []):
